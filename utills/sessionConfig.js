@@ -14,7 +14,7 @@ store.on("error", function (e) {
 })
 const sessionConfig={
     store,
-    name:'naruto',
+    name:'narut',
     secret,
     resave:false,
     savUinitialized:true,
