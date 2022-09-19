@@ -1,0 +1,46 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="/styles/register.css">
+<%- include("/home/Ayyan/Desktop/portfolio/views/partials/errorflash.ejs") %>
+ 
+<div class="register_container">
+
+    <div class="register_card">
+        <div class="image_register">
+            <img src="https://res.cloudinary.com/dcwpxxcd9/image/upload/v1656316325/CraftingCrew/undraw_access_account_re_8spm_rmjxwf.svg" alt="">
+        </div>
+        <div class="register_form">
+            <h1 class="heading">Login</h1>
+            <form action="/login" method="post" id="form">
+                <div class="input-control">
+                <label for="name">Name</label>
+                <input type="text" name="username" id="name">
+                <div class="error"></div>
+            </div>
+            <!-- <div class="input-control">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+                <div class="error"></div>
+            </div> -->
+            <div class="input-control">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password">
+                <span  class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                <div class="error"></div>
+            </div>
+
+            <button type="submit">Log In</button>
+            <p>Or</p>
+            
+                <div class="input-control">
+                    <div class="buttons">
+                    <a href="/google" class="button_google"><i class="fab fa-google left"></i>LogIn with Google</a>
+                    <a href="/register" class="button_login"><i class="fa-solid fa-right-to-bracket"></i>Register</a>
+            </div>
+        </div>
+            </form>
+        </div>
+        
+    </div>
+</div>
+<script src="/javascripts/showpass.js"></script>

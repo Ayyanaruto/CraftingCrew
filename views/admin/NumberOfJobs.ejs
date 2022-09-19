@@ -1,0 +1,38 @@
+<div class="yourChart">
+    <canvas id="myChart1"></canvas>
+  </div>
+
+<script>
+
+    let months = [];
+    
+  const data1=<%-JSON.stringify(JobsData)%>;
+  
+  for(i in data1){
+  months.push(data1[i].month)
+  }
+  let labels=[...new Set(months)]
+  
+    const data = {
+      labels: labels,
+      datasets: [{
+        label: 'Number of Job Posted per Month',
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(255, 99, 132)',
+        data:[data1.length] ,
+       
+      }]
+    };
+   
+    const config = {
+      type: 'line',
+      data: data,
+      options: {
+        maintainAspectRatio: false,
+      }
+    };
+    const myChart1 = new Chart(
+      document.getElementById('myChart1'),
+      config
+    );
+  </script>

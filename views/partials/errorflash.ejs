@@ -1,0 +1,16 @@
+<% if(error&&error.length){%> 
+<link rel="stylesheet" href="/styles/errorflash.css">
+<div class="flash_container">
+    <ul class="flash_msg">
+        <li class="msg s_warning">
+            <span><i class="fas fa-exclamation"></i></span>
+            <div class="text">
+                <div class="title">Warning</div>
+                <div class="content"><%= error %> </div>
+            </div>
+            <span class="alink"><i class="fas fa-times"></i></span>
+        </li>
+    </ul>
+</div>
+<script src="/javascripts/flash.js"></script>
+<% } %> 

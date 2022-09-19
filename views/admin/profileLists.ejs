@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="/styles/profileLists.css">
+
+<div class="wrapper_list">
+    <div class="searchbar">
+        <div class="wrap">
+            <div class="search">
+               <input type="text" class="searchTerm" placeholder="What are you looking for?">
+               <button type="submit" class="searchButton">
+                 <i class="fa fa-search"></i>
+              </button>
+            </div>
+         </div>
+    </div>
+    <div class="list_card">
+        
+   
+        <% for(let i of TotalUsers ) {%> 
+            <% if(i.resume!==undefined){%> 
+        <div class="profile" value="<%= i.resume.email %> ">
+            <div class="image_profile">
+                <img src="<%= i.resume.profile.url %> " alt="">
+            </div>
+            <div class="name">
+                <p><b>Name:</b><%= i.resume.name %> </p>
+                <p><b>Email:</b><%= i.resume.email %> </p>
+                <p><b>Phone:</b><%= i.resume.contact_number %> </p>
+            </div>
+            <div class="buttons">
+                <a href="/user/profile/<%= i.id %>/update/<%= i.resume.id %> "><button>Update</button></a>
+                <form action="/user/profile/<%= i.id %>/delete?_method=DELETE" method="post">
+                <a href=""><button type="submit">Delete</button></a></form>
+                <a href="/user/profile/<%=i.id%> "><button>Info</button></a>
+            </div>
+
+        </div>
+        <% } %> 
+    <%}%>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+<script src="/javascripts/searchBar.js" ></script>

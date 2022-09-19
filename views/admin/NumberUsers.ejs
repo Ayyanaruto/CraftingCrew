@@ -1,0 +1,89 @@
+<div  class="yourChart">
+ 
+    <canvas id="myChart"></canvas>
+  </div>
+ 
+  <script>
+   
+    const user=<%-JSON.stringify(UsersData)%>;
+    
+  
+    let labels_user = [
+    
+    ];
+  
+    let data2=[]
+   user.map((e,i)=>{
+   let data=e.categorizedByDate
+   data2=[...data]
+  
+   })
+
+  
+    const data_user = {
+      labels: labels_user,
+      datasets: [{
+        label: 'Number Of Users Per Day',
+        backgroundColor:['rgba(255, 99, 132,0.58)',
+        'rgba(245, 39, 145, 0.58)','rgba(0, 177, 145, 0.58)'] ,
+        borderColor: 'rgb(255, 99, 132)',
+        data: data2,
+      }]
+    };
+  
+    const config_user = {
+      type: 'bar',
+      data: data_user,
+      options: {
+        parsing: {
+        xAxisKey: '_id',
+        yAxisKey: 'y'
+    },
+    maintainAspectRatio: false,
+    plugins: {
+            title: {
+                display: true,
+                text: 'Users Data', padding: {
+                    top: 10,
+                    bottom: 30
+                }
+            }
+        }
+      }
+    };
+    const myChart_user = new Chart(
+    document.getElementById('myChart'),
+    config_user
+  );
+function updateChart(option){
+if(option.value=='day'){
+  user.map((e,i)=>{
+   let data=e.categorizedByDate
+   data2=[...data]
+  
+   })
+   myChart_user.config.data.datasets[0].data=data2
+   myChart_user.config.data.datasets[0].label="Number of Users Per Day"
+}
+else if(option.value=='month'){
+  user.map((e,i)=>{
+   let data=e.categorizedByMonth
+   data2=[...data]
+   
+   })
+   myChart_user.config.data.datasets[0].data=data2
+   myChart_user.config.data.datasets[0].label="Number of Users Per Month"
+}
+else{
+  user.map((e,i)=>{
+   let data=e.categorizedByYear
+   data2=[...data]
+  
+   })
+   myChart_user.config.data.datasets[0].data=data2
+   myChart_user.config.data.datasets[0].label="Number of Users Per Year"
+}
+myChart_user.update()
+}
+  </script>
+  

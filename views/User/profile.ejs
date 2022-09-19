@@ -1,0 +1,98 @@
+<%- layout("layout/boilerplate") %> 
+<link rel="stylesheet" href="/profile/profile.css">
+<div class="container">
+  <div class="cv">
+    <div class="cv-row">
+      <div class="cv-wrap">
+        <div class="cv-name"><%= data.resume.name %> <a href="/user/profile/<%= data.id %>/update/<%= data.resume.id %>  "><i class="fa-regular fa-pen-to-square"></i></a></div>
+        <div class="cv-subname"><%= data.resume.field%></div>
+        <div class="cv-content">
+          <div class="head-title">Exprecince</div>
+          <% if(data.resume.experience.role!==null||data.resume.experience.role!==undefined){%> 
+          <% for(let i in data.resume.experience) {%> 
+          <div class="cv-content-item">
+            <div class="title"><%=data.resume.experience[i].role%> </div>
+            <div class="subtitle"><%= data.resume.experience[i].enterprise_name %> </div>
+            <div class="time"><%=data.resume.experience[i].role_from_date %>  - <%= data.resume.experience[i].role_to_date%> </div>
+            <div class="exprecince"><%= data.resume.experience[i].role_description %> </div>
+          </div>
+          <% } %> 
+          <%}else{%>
+             <div class="title">Will,Love to have it</div>
+         <% } %> 
+        </div>
+        <div class="cv-content">
+          <div class="head-title">Education</div>
+          <div class="cv-content-item">
+            <div class="title"><%= data.resume.school_qualification %> 
+            </div>
+            <div class="subtitle"><%= data.resume.school_name %></div>
+            <div class="time"><%= data.resume.school_completion_date %></div>
+            
+          </div>
+          <div class="cv-content-item">
+            <div class="title"><%= data.resume.degree_name %></div>
+            <div class="subtitle"><%= data.resume.college_name %></div>
+            <div class="time"><%= data.resume.college_completion_date %></div>
+            
+          </div>
+  
+        </div>
+      </div>
+      <div class="cv-wrap">
+        <div class="avatar">
+          <img src="<%= data.resume.profile.url %> " alt="" />
+        </div>
+        <div class="info">
+          <div class="title">Contact</div>
+          <p><a href="#"><i class="fa-solid fa-envelope"></i><%= data.resume.email %> </a></p>
+          <p><a href="tel:+91<%= data.resume.contact_number %>"><i class="fa-solid fa-phone"></i><%= data.resume.contact_number %></a></p>
+          <p></p>
+        </div>
+        <div class="cv-skills">
+          <div class="head-title">Primary Skills
+          </div>
+          <div class="cv-skills-item">
+            <% const skill =data.resume.skills[0].split(',') 
+            for(i in skill){%> 
+            <div class="title"><%=skill[i]%></div>
+              <%}%>
+          </div>
+  
+        </div>
+        <div class="cv-skills">
+          <div class="head-title">Secondary Skills
+          </div>
+          <div class="cv-skills-item">
+       
+            <% const sec_skill =data.resume.secondary_skills[0].split(',') 
+            for(i in sec_skill){%> 
+            <div class="title"><%=sec_skill[i]%></div>
+              <%}%>
+          </div>
+  
+        </div>
+        <div class="cv-social">
+          <a href="<%=data.resume.github%>" title="Github">
+            <svg viewBox="0 0 24 24" width="30" height="30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" shape-rendering="geometricPrecision" style="">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"></path>
+            </svg>
+  
+          </a>
+           <a href="<%=data.resume.linkedin%>" title="Linkedin">
+            <svg viewBox="0 0 24 24" width="30" height="30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" shape-rendering="geometricPrecision" style="">
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"></path>
+              <path d="M2 9h4v12H2z"></path>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg></a>
+          
+      
+  
+        </div>
+      </div>
+  
+    </div>
+  
+  </div>
+ 
+<script src="/javascripts/profileFunc.js"

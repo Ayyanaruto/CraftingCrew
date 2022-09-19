@@ -1,0 +1,46 @@
+.app_wrapper{
+    display: flex;
+    width: 100%;
+    min-height:50vh ;
+ justify-content: center;
+
+}
+.admin_heading{
+    text-align: center;
+    font-size: 3rem;
+}
+.chart{
+    min-height: 100%;
+    width: calc(100%/3);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+   background-color: #edede9;
+   margin: 10px;
+   border-radius: 30px;
+ 
+   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+select{
+    margin: 20px;
+    padding: 10px;
+    color: white;
+    background-color: #f28482;
+    border-radius: 10px;
+}
+.chart h1{
+    font-size: 1rem;
+    text-align: center;
+}
+@media(max-width:700px){
+    .app_wrapper{
+       display: block;
+      align-items: center;
+      
+    }
+    .chart{
+        display: block;
+        width: 100%;
+    }
+}

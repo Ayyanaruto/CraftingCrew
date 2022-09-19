@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="/styles/showJob.css">
+<div class="container">
+    <div class="show-job">
+    <div class="job-profile">
+        <div class="wrapper">
+            <%if(findResume.admin_checked==="checked"){%> 
+                <img src="https://res.cloudinary.com/dcwpxxcd9/image/upload/v1653141030/CraftingCrew/icons8-check-64_ynpdm7.png" alt="PDF" width="100px" height="90px">
+                <%}else{%>
+                  <img src="https://res.cloudinary.com/dcwpxxcd9/image/upload/v1653150085/CraftingCrew/64px-Flat_cross_icon.svg_ogxutw.png" alt="PDF" width="100px" height="90px">
+                  <%}%>  
+    </div>
+    </div>
+    <div class="profile-card">
+        <section class="responsiblities">
+            <h3>Resume</h3>
+         <img src="https://res.cloudinary.com/dcwpxxcd9/image/upload/v1653133854/CraftingCrew/pdf-svgrepo-com_fk58g0.svg " alt="" srcset="" id="pdf">
+         <a href="<%=findResume.user_resume.url%>">Download Client Resume</a>
+        </section>
+        <section class="skill">
+            <h3>Name</h3>
+            <p><%=findResume.user_name %> </p>
+        </section>
+        <section class="experience">
+            <h3>Email</h3>
+            <p><%=findResume.user_email %> </p>
+        </section>
+        <section class="experience">
+            <h3>Phone Number</h3>
+            <p><%=findResume.user_number %> </p>
+        </section>
+        <section class="age">
+            <h3>Age</h3>
+            <p><%=findResume.user_age %> </p>
+        </section>
+        <section class="bio">
+            <h3>Bio</h3>
+            <p><%=findResume.user_bio %> </p>
+        </section>
+        <section class="experience">
+            <h3>Job Applied For:</h3>
+            <p><%=findResume.user_job %> </p>
+        </section>
+        <section class="interest">
+            <h3>Phone Number</h3>
+            <p><%=findResume.user_interest%> </p>
+        </section>
+    </div>
+    <div>
+        <form action="/admin/submittedcv/<%=findResume.id%>?_method=PUT" method="post">
+            <input type="submit" name="admin_checked" id="check" value="checked">
+        </form>
+    </div>
+    
+</div>
+<div class="del">
+    <form action="/user/profile/<%=findResume.id%>/delete?_method=DELETE" method="post">
+      <button type="submit" id="delete">Delete</button>
+    </form>
+  </div>
+</div>

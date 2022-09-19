@@ -1,0 +1,32 @@
+<%- layout("layout/boilerplate") %> 
+<link rel="stylesheet" href="/styles/apply.css">
+<div class="containerApply">
+    <div class="wrap">
+        <!-- <i class="fa-solid fa-cloud-arrow-up"></i> -->
+        <form method="post" action="/Jobs/<%=job._id%>/<%=currentUser.id%>" enctype="multipart/form-data" >
+ 
+           
+            <div class="file-upload">
+                <p>Upload your Resume</p>
+            <label for="file">
+                <i class="fa-solid fa-cloud-arrow-up"></i> 
+                </label>
+                <input type="file" name="resume" id="file" hidden>
+            </label>
+        </div>
+        <button type="submit">Submit</button>
+        </form>
+        <div class="file-name">
+            <div class="wrapper-file">  <i class="fas fa-file-alt"></i>
+               </div>
+          
+            <!-- <div class="progress">
+                <p></p>
+            </div> -->
+            
+        </div>
+     
+        
+    </div>
+</div>
+<script src="/javascripts/apply.js"></script>

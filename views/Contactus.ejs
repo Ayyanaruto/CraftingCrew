@@ -1,0 +1,93 @@
+<%- layout("layout/boilerplate") %>
+<link rel="stylesheet" href="/styles/contact-us.css">
+<div class="container">
+    <span class="big-circle"></span>
+ 
+    <div class="form">
+      <div class="contact-info">
+        <h3 class="title">Let's get in touch</h3>
+        <p class="text">
+            Our crew consist of dynamic individuals from the relevant background who are constantly striving to offer the best to our clients. 
+
+        </p>
+
+        <div class="info">
+          <div class="information">
+            <img src="https://res.cloudinary.com/dcwpxxcd9/image/upload/v1650444056/CraftingCrew/undraw_delivery_address_re_cjca_1_jelier.svg" class="icon" alt="" />
+            <p>Crafting Crew HR Solutions,
+                402, Om Samarpan Apartments,
+                Plot No 114 C, Seawoods,
+                Nerul (West), Navi Mumbai,
+                Pin Code: 400706.
+                </p>
+          </div>
+          <div class="information">
+            <img src="https://res.cloudinary.com/dcwpxxcd9/image/upload/v1650444056/CraftingCrew/undraw_newsletter_re_wrob_1_t1hnod.svg" class="icon" alt="" />
+            <p>services@crafting-crew.com
+            </p>
+          </div>
+          <div class="information">
+            <img src="https://res.cloudinary.com/dcwpxxcd9/image/upload/v1650444056/CraftingCrew/undraw_phone_call_re_hx6a_1_nt81im.svg" class="icon" alt="" />
+            <p>7506070810
+            </p>
+          </div>
+        </div>
+
+        <div class="social-media">
+          <p>Connect with us :</p>
+          <div class="social-icons">
+            <a href="#">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <span class="circle one"></span>
+        <span class="circle two"></span>
+
+        <form action="/Contact-us" method="post" autocomplete="off" id="form">
+          <h3 class="title">Contact us</h3>
+          <div class="input-container">
+            <input type="text" name="name" class="input" />
+            <div class="input-control"><div class="error"></div></div>
+            <label for="">Username</label>
+            <span>Username</span>
+            
+            
+          </div>
+          <div class="input-container">
+            <input type="email" name="email" class="input" />
+            <div class="input-control"><div class="error"></div></div>
+            <label for="">Email</label>
+            <span>Email</span>
+          </div>
+          <div class="input-container">
+            <input type="tel" name="phone" class="input" />
+            <div class="input-control"><div class="error"></div></div>
+            <label for="">Phone</label>
+            <span>Phone</span>
+          </div>
+          <div class="input-container textarea">
+            <textarea name="message" class="input"></textarea>
+            <div class="input-control"><div class="error"></div></div>
+            <label for="">Message</label>
+            <span>Message</span>
+          </div>
+          <input type="submit" value="Send" class="btn" />
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="/javascripts/contact.js"></script>

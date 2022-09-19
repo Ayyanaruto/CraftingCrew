@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="/styles/adminLogin.css">
+<div class="register_container">
+        <div class="register_form">
+            <h1 class="heading"> Admin Login</h1>
+            <form action="/admin/login" method="post" id="form">
+                <div class="input-control">
+                <label for="name">Name</label>
+                <input type="text" name="username" id="name">
+                <input type="text" name="role" value="admin" hidden>
+                <div class="error"></div>
+            </div>
+            <!-- <div class="input-control">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+                <div class="error"></div>
+            </div> -->
+            <div class="input-control">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password">
+                <span  class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                <div class="error"></div>
+            </div>
+
+            <button type="submit">Log In</button>
+     
+        
+        </div>
+            </form>
+        </div>
+        
+    </div>
+</div>
+<script src="/javascripts/showpass.js"></script>

@@ -1,0 +1,32 @@
+<% if(success&&success.length){ %> 
+<link rel="stylesheet" href="/styles/success.css">
+<!-- <div class="success_container">
+    <div class="block">
+        <div class="imager">
+            <img src="https://res.cloudinary.com/dcwpxxcd9/image/upload/v1656238550/CraftingCrew/trophy_pu5fay.svg" alt="" srcset="">
+
+        </div>
+        <div class="message">
+            <p class="head">Step Towards Success</p>
+            <p><%= success %> </p>
+        </div>
+        <div class="undo">
+            <button type="reset" id="butt">X</button>
+        </div>
+    </div>
+</div> -->
+<div class="flash_container">
+    <ul class="flash_msg">
+        <li class="msg s_success">
+            <span><i class="fas fa-check"></i></span>
+            <div class="text">
+                <div class="title">Success</div>
+                <div class="content"><%= success %> </div>
+            </div>
+            <span class="alink"><i class="fas fa-times"></i></span>
+        </li>
+        
+    </ul>
+</div>
+<script src="/javascripts/flash.js"></script>
+<% } %> 

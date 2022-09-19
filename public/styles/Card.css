@@ -1,0 +1,95 @@
+.container{
+   max-width:100%;
+   min-height:100vh;
+  display: flex;
+  flex-wrap: wrap;
+ background: linear-gradient(135deg,#ee9ca7,#ffdde1);
+  
+      
+  }
+  ::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #023047;
+    border-radius: 10px;
+  }
+  
+  .card{
+    max-width: 500px;
+    max-height: 500px;
+    border-radius: 25px;
+    padding: 15px;
+    margin: 10px;
+    background-color: #F5F5F5;
+    text-align: center;
+    box-shadow: 0 0 10px
+      rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+  }
+  
+  .card-title{
+    color: #212121;
+  }
+  
+  .card-content{
+    font-size: 1.1em;
+    color: #424242;
+    margin: 15px;
+  }
+  .respo{
+    max-height: 100px;
+    overflow-y: hidden;
+ 
+  
+  }
+  
+  .card-btn{
+    background: none;
+    border: 2px solid #212121;
+    padding: 10px 30px;
+    font-size: 1.2em;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    margin-top: 10px;
+  }
+  .card > img{
+    max-width: 150px;
+    max-height: 100px;
+  }
+  .card-btn a{
+    color: #212121;
+    text-decoration:none;
+    position: absolute;
+  }
+  
+  .card-btn:hover{
+    background: #212121;
+    color: #fff;
+    
+  }
+ 
+
+  @media(max-width:700px){
+    
+  .container{
+   
+   
+   justify-content: center;   
+   }
+    .card{
+      min-height: 340px;
+      min-width: 300px;
+    }
+  }
+  

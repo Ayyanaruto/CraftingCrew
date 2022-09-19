@@ -1,0 +1,181 @@
+<%- layout("layout/boilerplate") %> 
+<link rel="stylesheet" href="/styles/resume.css">
+
+    
+ <!-- //----------------------------------------------------------------------------------------------------------------//      -->
+      
+ <div class="wrapper">
+	<div class="header">
+		<ul>
+			<li class="active form_1_progessbar">
+				<div>
+					<p>1</p>
+				</div>
+			</li>
+			<li class="form_2_progessbar">
+				<div>
+					<p>2</p>
+				</div>
+			</li>
+			<li class="form_3_progessbar">
+				<div>
+					<p>3</p>
+				</div>
+			</li>
+            <li class="form_4_progessbar">
+				<div>
+					<p>4</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="form_wrap">
+        <form action="/user/profile/<%= currentUser.id %>/edit" method="post" enctype="multipart/form-data" id="form" data-multi-step class="multi-step-form">
+		<div class="form_1 data_info">
+			<h2> General Information</h2>
+                
+                    <div class="form_container">
+                        <div class="input_wrap">
+                            <label for="name">Your Name</label>
+                            <input type="text" name="name" id="name"  class="input" >
+                            <div class="input-control"><div class="error"></div></div>
+                        </div>
+                        <div class="input_wrap">
+                            <label for="email">Your Email</label>
+                            <input type="email" name="email" id="email"  class="input" >
+                            <div class="input-control"><div class="error"></div></div>
+                        </div>
+                        <div class="input_wrap">
+                            <label for="contact">Your Contact</label>
+                            <input type="tel" name="contact_number" id="contact"  class="input"> 
+                            <div class="input-control"><div class="error"></div></div>
+                        </div>
+                        <div class="input_wrap">
+                            <label for="field">Your Field</label>
+                            <input type="text" name="field" id="field"  class="input" placeholder="Web Dev/Designer...">
+                            <div class="input-control"><div class="error"></div></div>
+                        </div>
+                    </div>
+                
+		</div>
+		<div class="form_2 data_info" style="display: none;">
+			<h2>Education</h2>
+                
+                    <div class="form_container">
+                        <div class="input_wrap">
+                            <label for="school">Your School</label>
+                            <input type="text" name="school_name" id="school" class="input">
+                            <div class="input-control"><div class="error"></div></div>
+                        </div>
+                        <div class="input_wrap">
+                            <label for="qualification">Qualification</label>
+                            <input type="text" name="school_qualification" id="qualification" placeholder="SSC/CBSE/ICSE"  class="input">
+                            <div class="input-control"><div class="error"></div></div>
+                        </div>
+                        <div class="input_wrap">
+                            <label for="">Completion date</label>
+                            <input type="date" name="school_completion_date" id="School_completed" class="input">
+                            <div class="input-control"><div class="error"></div></div>
+                        </div>
+                        <div class="input_wrap">
+                            <label for="college">Your College</label>
+                            <input type="text" name="college_name" id="college" class="input">
+                            <div class="input-control"><div class="error"></div></div>
+                        </div>
+                        <div class="input_wrap">
+                            <label for="Highest">Highest Qualification</label>
+                            <input type="text" name="degree_name" id="Highest" placeholder="Bachelors/Masters"  class="input">
+                            <div class="input-control"><div class="error"></div></div>
+                        </div>
+                        <div class="input_wrap">
+                            <label for="college_completion">Completion date</label>
+                            <input type="text"placeholder="Date" name="college_completion_date" id="college_completion"  class="input" onfocus="(this.type='date')" >
+                            <div class="input-control"><div class="error"></div></div>
+                        </div>
+                    </div>
+                
+		</div>
+    
+        <div class="form_4 data_info" style="display: none;">
+			<h2> Skills</h2>
+                
+                    <div class="form_container">
+                        <div class="input_wrap">
+                            <label for="skills">Skills</label>
+                            <input type="text" name="skills" id="skills" placeholder="Seperate by comma like HTML,CSS..."  class="input">
+                            <div class="input-control"><div class="error"></div></div>
+                        </div>
+                    </div>
+
+                    <h2> Secondary Skills</h2>
+                    <div class="form_container">
+                        <div class="input_wrap">
+                            <label for="secondary_skills">Skills</label>
+                            <input type="text" name="secondary_skills" id="secondary_skills" placeholder="Seperate by comma like HTML,CSS..."  class="input">
+                            <div class="input-control"><div class="error"></div></div>
+                        </div>
+                    </div>
+                
+		</div>
+        <div class="form_3 data_info" style="display: none;" id="form3">
+			<h2> Your Experience</h2>
+                <div class="form_container" id="experience">
+                    <div class="experience_num">
+                    <div class="input_wrap">
+                        <label for="Enterprise">Enterprise Name</label>
+                        <input type="text" name="enterprise_name" id="Enterprise"  class="input">
+                    </div>
+                    <div class="input_wrap">
+                        <label for="role">Your Role</label>
+                        <input type="text" name="role" id="role"  class="input">
+                    </div>
+                    <div class="input_wrap">
+                        <label for="from_role1">From</label>
+                        <input type="text" placeholder="Date" name="role_from_date" id="from_role1"  class="input"  onfocus="(this.type='date')">
+                    </div>
+                    <div class="input_wrap">
+                        <label for="to_role1">To</label>
+                        <input type="text"  placeholder="Date" name="role_to_date" id="contact"  class="input"  onfocus="(this.type='date')">
+                    </div>
+                    <div class="input_wrap">
+                        <label for="role">Your Role Description</label>
+                        <textarea name="role_description"  class="input"></textarea>
+                    </div>
+                </div>
+                
+                </div>
+                <div class="controls">
+                    <a href="#" id="add_more_fields"><i class="fa fa-plus"></i>Add More</a>
+                    <a href="#" id="remove_fields"><i class="fa fa-plus"></i>Remove Field</a>
+                  </div>
+            
+		</div>
+	</div>
+	<div class="btns_wrap">
+		<div class="common_btns form_1_btns">
+			<button type="button" class="btn_next">Next <span class="icon"><ion-icon name="arrow-forward-sharp"></ion-icon></span></button>
+		</div>
+		<div class="common_btns form_2_btns" style="display: none;">
+			<button type="button" class="btn_back"><span class="icon"><ion-icon name="arrow-back-sharp"></ion-icon></span>Back</button>
+			<button type="button" class="btn_next">Next <span class="icon"><ion-icon name="arrow-forward-sharp"></ion-icon></span></button>
+		</div>
+        <div class="common_btns form_3_btns" style="display: none;">
+			<button type="button" class="btn_back"><span class="icon"><ion-icon name="arrow-back-sharp"></ion-icon></span>Back</button>
+			<button type="button" class="btn_next">Next <span class="icon"><ion-icon name="arrow-forward-sharp"></ion-icon></span></button>
+		</div>
+		<div class="common_btns form_4_btns" style="display: none;">
+			<button type="button" class="btn_back"><span class="icon"><ion-icon name="arrow-back-sharp"></ion-icon></span>Back</button>
+			<button type="submit" class="btn_done">Done</button>
+		</div>
+	</div>
+</form>
+</div>
+
+<div class="modal_wrapper">
+	<div class="shadow"></div>
+	<div class="success_wrap">
+		<span class="modal_icon"><ion-icon name="checkmark-sharp"></ion-icon></span>
+		<p>You have successfully completed the process.</p>
+	</div>
+</div>
+<script src="/javascripts/resume.js"></script>

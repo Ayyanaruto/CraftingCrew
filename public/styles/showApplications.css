@@ -1,0 +1,38 @@
+.applications_wrapper{
+    display: flex;
+    justify-content: space-evenly;
+}
+.applications_card{
+    min-height: 250px;
+    max-height: fit-content;
+    max-width: 350px;
+   padding-left: 10px;
+   padding-right: 10px;
+    margin:20px;
+    background-color: #f1faee;
+    border-radius: 10px;
+}
+.applications_card iframe{
+    width: 100%;
+    border-radius: 10px;
+}
+.profile_button{
+    display: flex;
+    justify-content: space-between;
+   margin-top: 20px;
+
+}
+.red_button{
+color: azure;
+  text-decoration: none;  
+   padding: 10px;
+   background-color: #d62828;
+   border-radius: 5px;
+}
+.green_button{
+    color: azure;
+  text-decoration: none;  
+   padding: 10px;
+   background-color: #06d6a0;
+   border-radius: 5px;
+}

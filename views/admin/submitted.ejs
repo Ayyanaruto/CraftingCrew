@@ -1,0 +1,27 @@
+<%- layout('layout/adminplate') %> 
+
+<link rel="stylesheet" href="/styles/Card.css">
+<div class="container">
+    <% for(let resumes of resume){ %> 
+<div class="card">
+  <%if(resumes.admin_checked==="checked"){%> 
+<img src="https://res.cloudinary.com/dcwpxxcd9/image/upload/v1653141030/CraftingCrew/icons8-check-64_ynpdm7.png" alt="PDF" width="100px" height="90px">
+<%}else{%>
+  <img src="https://res.cloudinary.com/dcwpxxcd9/image/upload/v1653150085/CraftingCrew/64px-Flat_cross_icon.svg_ogxutw.png" alt="PDF" width="100px" height="90px">
+  <%}%>  
+
+    <p class="card-title">
+
+      <h1><%= resumes.name %> </h1>
+    </p>
+    <p class="card-content">
+    
+      <h5><%=resumes.email%> </h5> 
+     </p>
+     <a  href="/user/profile/<%=resumes.id%> "><button class="card-btn">Check</button></button></a>
+     </a>
+  </div>
+
+  <% } %> 
+</div>
+  

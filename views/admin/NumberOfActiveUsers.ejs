@@ -1,0 +1,40 @@
+<div class="yourChart">
+  <canvas id="myChart2"></canvas>
+</div>
+<script>
+  let active=<%-JSON.stringify(active)%>;
+  const total_user=<%-JSON.stringify(TotalUsers)%>;
+
+  const labels_active = [
+    'Active Users in %',
+    'Unactive Users'
+    
+    
+  ];
+
+  const data_active = {
+    labels: labels_active,
+    datasets: [{
+      label: 'My First dataset',
+      backgroundColor: ['rgba(255, 99, 132,0.58)',
+        'rgba(245, 39, 145, 0.58)','rgba(0, 177, 145, 0.58)'],
+      borderColor: 'rgb(255, 99, 132)',
+      data: [Math.round(active.length/total_user.length*100),Math.abs(Math.round(active.length/total_user.length*100)-100)],
+    }]
+  };
+
+  const config_active = {
+    type: 'pie',
+    data: data_active,
+    options: {
+      maintainAspectRatio: false,
+    }
+  };
+ 
+  const myChart_active = new Chart(
+    document.getElementById('myChart2'),
+    config_active
+  );
+
+
+</script>

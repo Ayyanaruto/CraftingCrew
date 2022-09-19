@@ -1,0 +1,41 @@
+<%- layout('layout/adminplate') %> 
+<link rel="stylesheet" href="/styles/Add-job.css">
+<div class="container">
+    <div class="wrapper">
+        <div class="title">Update Job</div>
+        <div class="form">
+            <form action="/admin/AddJobs/<%=update.id%>/update?_method=PUT" method="post" enctype="multipart/form-data">
+        <div class="inputfield">
+            <label for="Title">Title</label>
+            <input type="text" class=" text" name="title" id="Title" placeholder="Title" value='<%=update.title%>'> 
+
+        </div>
+        <div class="inputfield">  
+            <label for="responsiblity">Responsiblity</label>
+            <textarea name="responsiblity" class="textarea" id="responsiblity" cols="30" rows="10"><%= update.responsiblity %> </textarea>
+        </div>
+        <div class="inputfield">  
+            <label for="skills">Skills</label>
+            <textarea name="skills" class="textarea" id="skills" cols="30" rows="10"><%= update.skills %> </textarea>
+        </div>
+        <div class="inputfield">  
+            <label for="location">location</label>
+            <input type="text" class=" text" name="location" id="location" placeholder="location" value="<%=update.location%> "> 
+        </div>
+        <div class="inputfield">  
+            <label for="experience">Experience</label>
+            <input type="text" class=" text" name="experience" id="experience" placeholder="experience" value="<%= update.experience %> "> 
+        </div>
+        <div class="inputfield">  
+            <label for="experience">Images</label>
+            <input type="file" class=" text"  id="image"name="images"> 
+            <div class="input_image">
+            </div>
+            </div>
+            <button>Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="/javascripts/AddJob.js"></script>
+

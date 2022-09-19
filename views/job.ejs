@@ -1,0 +1,21 @@
+<%- layout("layout/boilerplate") %> 
+<link rel="stylesheet" href="/styles/Card.css">
+<div class="container"> 
+<% for(let jobs of jobsData){ %> 
+<div class="card">
+    <img src="<%= jobs.images.url %> " alt="" srcset="">
+    <p class="card-title">
+      <h1><%= jobs.title %> </h1>
+    </p>
+    <div class="respo">
+    <p class="card-content">
+     
+      <h5> Responsiblity:</h5>
+       <%= jobs.responsiblity%>
+     </p>
+    </div>
+     <a  href="/Jobs/<%=jobs.id%>">  <button class="card-btn">SEE MORE</button></button></a>
+     </a>
+  </div>
+<%}%> 
+</div>

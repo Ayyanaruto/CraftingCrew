@@ -1,0 +1,20 @@
+<%-layout('layout/adminplate') %>
+<link rel="stylesheet" href="/styles/showApplications.css">
+<div class="applications_wrapper">
+<%for(let i of Jobs.applications){ %> 
+<div class="applications_card">
+  <div class="resume_preview">
+    <iframe id="Preview" src="<%=i.resume.url %> "></iframe>
+  </div>
+  <div class="profile_button">
+    <div>
+    <a href="/user/profile/<%=i.profile._id%>" class="red_button">Profile</a>
+    </div>
+    <div>
+      <a href="<%=i.resume.url%>" class="green_button">Resume</a>
+    </div>
+  </div>
+  
+</div>
+<% } %> 
+</div>

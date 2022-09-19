@@ -1,0 +1,37 @@
+<%- layout("layout/boilerplate") %> 
+<link rel="stylesheet" href="/styles/showJob.css">
+<div class="container">
+    <div class="show-job">
+    <div class="job-profile">
+        <div class="wrapper">
+        <img src="<%= findJob.images.url %> " alt="" srcset="">
+    </div>
+    </div>
+    <div class="profile-card">
+        <section class="responsiblities">
+            <h3>Responsiblities</h3>
+            <p><%= findJob.responsiblity %> </p>
+        </section>
+        <section class="skill">
+            <h3>Skills</h3>
+            <p><%= findJob.skills %> </p>
+        </section>
+        <section class="experience">
+            <h3>Experience</h3>
+            <p><%= findJob.experience %> </p>
+        </section>
+        <section class="experience">
+            <h3>Location</h3>
+            <p><%= findJob.location %> </p>
+        </section>
+    </div>
+   
+    <a href="/Jobs/<%=findJob.id%>/<%=currentUser.id%>"><button type="submit">SUBMIT YOUR RESUME</button></a>
+</div>
+<% if(currentUser=== '63258205d036e510e496bd66'){ %> 
+<a href="/admin/AddJobs/<%=findJob.id%>/update"><button type="submit" id="update">Update</button></a>
+<form action="/admin/AddJobs/<%=findJob.id%>/delete?_method=DELETE" method="post">
+    <button type="submit" id="delete">Delete</button>
+</form>
+<% } %> 
+</div>

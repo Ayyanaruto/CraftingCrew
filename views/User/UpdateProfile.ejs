@@ -1,0 +1,133 @@
+<%- layout("layout/boilerplate") %> 
+<link rel="stylesheet" href="/profile/UpdateProfile.css">
+    >
+      <form action="/user/profile/<%=currentUser.id%>/update/<%=data.resume.id%>?_method=PUT" method="post"  id="form" enctype="multipart/form-data">
+        
+<div class="container">
+  <div class="cv">
+    <div class="cv-row">
+      <div class="cv-wrap">
+        <div class="cv-name"> <label for="name">Your Name</label>
+          <input type="text" name="name" id="name"  class="input" value="<%= data.resume.name %> "></div>
+        <div class="cv-subname"> <label for="field">Your Field</label>
+          <input type="text" name="field" id="field"  class="input" placeholder="Web Dev/Designer..." value="<%= data.resume.field%>"></div>
+        <div class="cv-content" >
+          <div class="head-title">Exprecince</div>
+          <div id="exp">
+          <% if(data.resume.experience.length>2){ %> 
+          <% for(let i in data.resume.experience) {%> 
+          <div class="cv-content-item">
+            <div class="title"><label for="role">Your Role</label>
+              <input type="text" name="role" id="role"  class="input" value="<%=data.resume.experience[i].role%> "></div>
+            <div class="subtitle"><label for="Enterprise">Enterprise Name</label>
+              <input type="text" name="enterprise_name1" id="Enterprise"  class="input" value="<%=data.resume.experience[i].enterprise_name%> "></div>
+            <div class="time"><label for="from_role1">From</label>
+              <input type="text" placeholder="Date" name="role_from_date" id="from_role1"  class="input" value="<%=data.resume.experience[i].role_from_date%>"  onfocus="(this.type='date')">  - <label for="to_role1">To</label>
+              <input type="text"  placeholder="Date" name="role_to_date" id="contact"  class="input" value="<%= data.resume.experience[i].role_to_date%> "  onfocus="(this.type='date')"> </div>
+            <div class="exprecince"><label for="role">Your Role Description</label>
+              <textarea name="role_description"  class="input"><%=data.resume.experience[i].role_description%></textarea> </div>
+          </div>
+          <% } %> 
+          <% }else {%>
+
+            <div class="cv-content-item">
+              <div class="title"><label for="role">Your Role</label>
+                <input type="text" name="role" id="role"  class="input" value="<%=data.resume.experience[0].role%> "></div>
+              <div class="subtitle"><label for="Enterprise">Enterprise Name</label>
+                <input type="text" name="enterprise_name" id="Enterprise"  class="input" value="<%=data.resume.experience[0].enterprise_name%> "></div>
+              <div class="time"><label for="from_role1">From</label>
+                <input type="text" placeholder="Date" name="role_from_date" id="from_role1"  class="input" value="<%=data.resume.experience[0].role_from_date%>"  onfocus="(this.type='date')">  - <label for="to_role1">To</label>
+                <input type="text"  placeholder="Date" name="role_to_date" id="contact"  class="input" value="<%= data.resume.experience[0].role_to_date%> "  onfocus="(this.type='date')"> </div>
+              <div class="exprecince"><label for="role">Your Role Description</label>
+                <textarea name="role_description"  class="input"><%=data.resume.experience[0].role_description%></textarea> </div>
+            </div>
+            <% } %> 
+
+        </div>
+          <div class="controls">
+            <a href="#" id="add_more_fields"><i class="fa fa-plus"></i>Add More</a>
+            <a href="#" id="remove_fields"><i class="fa fa-plus"></i>Remove Field</a>
+          </div>
+        </div>
+        <div class="cv-content">
+          <div class="head-title">Education</div>
+          <div class="cv-content-item">
+            <div class="title"><label for="qualification">Qualification</label>
+              <input type="text" name="school_qualification" id="qualification" placeholder="SSC/CBSE/ICSE"  class="input" value="<%= data.resume.school_qualification %>">
+            </div>
+            <div class="subtitle"><label for="school">Your School</label>
+              <input type="text" name="school_name" id="school" class="input" value="<%= data.resume.school_name %> "></div>
+            <div class="time"><label for="">Completion date</label>
+              <input type="date" name="school_completion_date" id="School_completed" class="input" value="<%= data.resume.school_completion_date %>"></div>
+            
+          </div>
+          <div class="cv-content-item">
+            <div class="title">  <label for="Highest">Highest Qualification</label>
+              <input type="text" name="degree_name" id="Highest" placeholder="Bachelors/Masters"  class="input" value="<%= data.resume.degree_name %>"></div>
+            <div class="subtitle"><label for="college">Your College</label>
+              <input type="text" name="college_name" id="college" class="input" value="<%= data.resume.college_name %>"></div>
+            <div class="time"> <label for="college_completion">Completion date</label>
+              <input type="text"placeholder="Date" name="college_completion_date" id="college_completion"  class="input" onfocus="(this.type='date')"  value="<%= data.resume.college_completion_date %>                           "></div>
+            
+          </div>
+  
+        </div>
+      </div>
+      <div class="cv-wrap">
+        <div class="avatar">
+          <label for="fileToUpload">
+            <div class="profile-pic" style="background-image: url('<%= data.resume.profile.url %>')" id="output">
+                <span class="glyphicon glyphicon-camera"></span>
+                <span>Change Image</span>
+            </div>
+            </label>
+            <input type="File" name="profile" id="fileToUpload" onchange="loadFile(event)">
+          
+          <!-- <img src=" " alt="" /> -->
+        </div>
+        <div class="info">
+          <div class="title">Contact</div>
+          <p><i class="fa-solid fa-envelope"></i><label for="email">Your Email</label>
+            <input type="text" name="email" id="email"  class="input" value="<%= data.resume.email %>"> </p>
+          <p><i class="fa-solid fa-phone"></i><label for="contact">Your Contact</label>
+            <input type="tel" name="contact_number" id="contact"  class="input" value="<%= data.resume.contact_number %>"> </p>
+          <p></p>
+        </div>
+        <div class="cv-skills">
+          <div class="head-title">Primary Skills
+          </div>
+          <div class="cv-skills-item">
+            <label for="Enterprise">Skills</label>
+              <input type="text" name="skills" id="Skills" placeholder="Seperate by comma like HTML,CSS..."  class="input" value="<%=data.resume.skills[0]%>">
+           
+  
+        </div>
+        <div class="cv-skills">
+          <div class="head-title">Secondary Skills
+          </div>
+          <div class="cv-skills-item">
+            <label for="secondary_skills">Skills</label>
+            <input type="text" name="secondary_skills" id="secondary_skills" placeholder="Seperate by comma like Singing,Dancing..."  class="input"  value="<%=data.resume.secondary_skills[0]%>">
+          </div>
+  
+        </div>
+        <div class="cv-social">
+          <div class="inputWithIcon inputIconBg">
+            <input type="text" placeholder="github" class="media-links" name="github" value="<%= data.resume.github %> "/>
+            <i class="fa-brands fa-github"></i>
+          </div>
+          <div class="inputWithIcon inputIconBg">
+            <input type="text" placeholder="linkedin" class="media-links" name="linkedin" value="<%= data.resume.linkedin %> "/>
+            <i class="fa-brands fa-linkedin"></i>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+   
+  </div>
+  <input type="submit" class="Btn" value="Save Changes"/>
+       </form>
+       
+      
+<script src="/javascripts/UpdateProfile.js"></script>
