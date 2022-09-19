@@ -1,10 +1,7 @@
 const express=require('express')
 const nodemailer=require("nodemailer")
 const {google}=require("googleapis")
-const Client_id=process.env.CLIENT_ID
-const Client_Secret=process.env.CLIENT_SECRET
-const Refresh_token=process.env.REFRESH_TOKEN
-const redirect=process.env.REDIRECT_URI
+
 const Contact=require('../models/contact')
 const fs=require("fs")
 const catchAsync=require('../utills/catchAsync')
