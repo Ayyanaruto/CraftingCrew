@@ -105,7 +105,8 @@ const fontSrcUrls = ['https://fonts.google.com/',
 'https://unpkg.com/aks-fonts@1.0.0/Product-Sans/Product-Sans-Bold-italic.ttf',
 'https://unpkg.com/aks-fonts@1.0.0/Product-Sans/Product-Sans-Bold.ttf',
 'https://unpkg.com/aks-fonts@1.0.0/Product-Sans/Product-Sans-Regular.ttf',
-'https://unpkg.com/aks-fonts@1.0.0/Product-Sans/Product-Sans-italic.ttf'
+'https://unpkg.com/aks-fonts@1.0.0/Product-Sans/Product-Sans-italic.ttf',
+'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/'
 
 
 ];
