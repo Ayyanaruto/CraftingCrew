@@ -94,10 +94,12 @@ button:hover{
     max-height: 50px;
 }
 #update{
-  margin: 0;
+
+  margin: 10px;
   background-color: rgba(12, 185, 127, 0.892);
 }
 #delete{
+
   background-color: #d11a2a;
-  margin: 0%;
+  margin: 10px;
 }

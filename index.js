@@ -68,7 +68,8 @@ const scriptSrcUrls = [
     "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js",
     'https://unpkg.com/ionicons@5.5.2/dist/ionicons/p-e26ac56f.js',
    ' https://fonts.google.com/',
-  ' https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/'
+  ' https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/',
+  "https://avatars.dicebear.com/"
 ];
 const styleSrcUrls = [
     "https://kit-free.fontawesome.com/",
@@ -84,6 +85,7 @@ const styleSrcUrls = [
     "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js",
     'https://fonts.google.com/',
     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/',
+    "https://avatars.dicebear.com/"
     
 
 ];
@@ -106,7 +108,8 @@ const fontSrcUrls = ['https://fonts.google.com/',
 'https://unpkg.com/aks-fonts@1.0.0/Product-Sans/Product-Sans-Bold.ttf',
 'https://unpkg.com/aks-fonts@1.0.0/Product-Sans/Product-Sans-Regular.ttf',
 'https://unpkg.com/aks-fonts@1.0.0/Product-Sans/Product-Sans-italic.ttf',
-'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/'
+'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/',
+"https://avatars.dicebear.com/"
 
 
 ];
@@ -125,6 +128,8 @@ app.use(
                 "data:",
                 "https://res.cloudinary.com/dcwpxxcd9/", //SHOULD MATCH YOUR CLOUDINARY ACCOUNT! 
                 "https://images.unsplash.com/",
+                'https://i.imgur.com/',
+                "https://avatars.dicebear.com/"
             ],
             fontSrc: ["'self'", ...fontSrcUrls],
         },
@@ -182,7 +187,8 @@ app.all('*',(req,res,next)=>{
 })
 app.use((err,req,res,next)=>{
     const{statusCode=500,message='Something went wrong'}=err
-    if(err.statusCode==404){
+    console.log(err.message.ExpressError)
+    if(err.statusCode===404){
         res.render("error404")
     }else{
     if (!err.message) err.message = 'Oh No, Something Went Wrong!'
@@ -190,5 +196,5 @@ app.use((err,req,res,next)=>{
 })
 const port=process.env.PORT || 3000
 app.listen(port,()=>{
-    console.log(`Connected to ${port}`)
+    console.log(`Connected to port`)
 })

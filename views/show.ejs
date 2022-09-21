@@ -28,7 +28,7 @@
    
     <a href="/Jobs/<%=findJob.id%>/<%=currentUser.id%>"><button type="submit">SUBMIT YOUR RESUME</button></a>
 </div>
-<% if(currentUser==='63272ef2a3259ea018f8dfdd'){ %> 
+<% if(currentUser.id==='63272ef2a3259ea018f8dfdd'){ %> 
 <a href="/admin/AddJobs/<%=findJob.id%>/update"><button type="submit" id="update">Update</button></a>
 <form action="/admin/AddJobs/<%=findJob.id%>/delete?_method=DELETE" method="post">
     <button type="submit" id="delete">Delete</button>
