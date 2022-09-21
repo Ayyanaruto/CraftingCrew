@@ -187,7 +187,7 @@ app.all('*',(req,res,next)=>{
 })
 app.use((err,req,res,next)=>{
     const{statusCode=500,message='Something went wrong'}=err
-    console.log(err.message.ExpressError)
+  
     if(err.statusCode===404){
         res.render("error404")
     }else{
