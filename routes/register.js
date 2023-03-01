@@ -35,7 +35,7 @@ router.get('/auth/google/callback',passport.authenticate('google',{failureFlash:
     const redirectUrl=req.session.returnTo||"/"
     
     delete req.session.returnTo
-    req.flash("success","Welcome back to CraftingCrew,Get your Dream Job Here")
+    req.flash("success","Welcome back to InfoStation,Get your Dream Job Here")
     
     res.redirect(redirectUrl)
 })
@@ -46,7 +46,7 @@ router.post('/login',passport.authenticate('local',{failureFlash:true,keepSessio
     const redirectUrl=req.session.returnTo||"/"
 
     delete req.session.returnTo
-    req.flash("success","Welcome back to CraftingCrew, Get your Dream Job Here")
+    req.flash("success","Welcome back to InfoStation, Get your Dream Job Here")
     
     res.redirect(redirectUrl)
     

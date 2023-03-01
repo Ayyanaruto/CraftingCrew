@@ -4,6 +4,6 @@ function isAdmin(req, res, next) {
 
     }else{
 
-    res.redirect('/admin/login')}
+    res.redirect('/')}
 }
 module.exports=isAdmin
