@@ -85,7 +85,8 @@ const styleSrcUrls = [
     "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js",
     'https://fonts.google.com/',
     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/',
-    "https://avatars.dicebear.com/"
+    "https://avatars.dicebear.com/",
+    
     
 
 ];
@@ -98,7 +99,8 @@ const connectSrcUrls = [
     "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js",
     "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js",
     'https://fonts.google.com/',
-    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/'
+    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/',
+    "https://docs.google.com"
    
     
 ];
@@ -109,14 +111,15 @@ const fontSrcUrls = ['https://fonts.google.com/',
 'https://unpkg.com/aks-fonts@1.0.0/Product-Sans/Product-Sans-Regular.ttf',
 'https://unpkg.com/aks-fonts@1.0.0/Product-Sans/Product-Sans-italic.ttf',
 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/',
-"https://avatars.dicebear.com/"
+"https://avatars.dicebear.com/",
+"https://docs.google.com"
 
 
 ];
 app.use(
     helmet.contentSecurityPolicy({
         directives: {
-            defaultSrc: [],
+            defaultSrc: ["https://online.flippingbook.com/"],
             connectSrc: ["'self'", ...connectSrcUrls],
             scriptSrc: ["'unsafe-inline'", "'self'", ...scriptSrcUrls],
             styleSrc: ["'self'", "'unsafe-inline'", ...styleSrcUrls],

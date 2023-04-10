@@ -70,7 +70,9 @@ router.get("/",(req,res)=>{
         res.render('job',{jobsData})
     }))
     
-   
+    router.get("/notes",(req,res)=>{
+        res.render("notes")
+    })
 
 
 

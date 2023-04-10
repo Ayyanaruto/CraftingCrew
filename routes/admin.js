@@ -199,6 +199,7 @@ const Jobs=await jobs.findById(id).populate("applications")
 res.render("admin/showApplications",{Jobs})
 
 })
+
 // router.get("/api/users",async(req,res)=>{
 //     const mail=req.query.mail
 //     if(req.query.mail){

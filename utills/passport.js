@@ -4,8 +4,8 @@ const User=require('../models/User')
 const catchAsync = require("./catchAsync")
 module.exports=function(passport){
 passport.use(new GoogleStrategy({
-    clientID:process.env.GOOGLE_CLIENT_ID,
-    clientSecret:process.env.GOOGLE_SECRET,
+    clientID:"12133232132131",
+    clientSecret:"sasasasasasa",
     callbackURL:'/auth/google/callback'
 },
 async(accessToken,refreshToken,profile,cb)=>{
