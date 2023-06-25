@@ -43,14 +43,25 @@ To run this project locally, follow these steps:
    ```bash
    npm install
    ```
-
-4. Start the application:
+4.Configure enviroment variables create `.env` file and provide
+necessary values for following variables
+```dotenv
+ADMIN
+CLOUDINARY_CLOUD_NAME
+CLOUDINARY_KEY
+CLOUDINARY_SECRET
+DB_URL
+GOOGLE_CLIENT_ID
+GOOGLE_SECRET
+SESSION_SECRET
+```
+5. Start the application:
 
    ```bash
    npm start
    ```
 
-5. Open your web browser and visit `http://localhost:3000` to access the website.
+6. Open your web browser and visit `http://localhost:3000` to access the website.
 
 <img src="https://github.com/Ayyanaruto/Ayyanaruto/blob/a8ab3ec2f7b0db200c750cd1f22c303d6a1c2a08/LINE.gif"><br><br>
 ## Usage
