@@ -1,6 +1,6 @@
 # CraftingCrew
 
- <img src="https://github.com/Ayyanaruto/CraftingCrew/blob/ae94c7ec298f0be52f77f0914586e6324a2a5e4a/images/CRAFTING%20CREW(1).png" width="1000" height="700">
+ <img src="https://github.com/Ayyanaruto/CraftingCrew/blob/main/images/CRAFTING_CREW_1_-removebg.png" width="1000" height="700">
 CraftingCrew is a vibrant and dynamic manpower consultancy website created with Node.js, Express.js, EJS, HTML, CSS, and libraries like Nodemailer. This project aims to streamline the process of connecting job seekers with potential employers by providing a platform for recruitment agencies and candidates to interact.
 
 🔧👨‍💻🚀
