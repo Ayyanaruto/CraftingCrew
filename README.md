@@ -96,10 +96,10 @@ The file structure of the project is organized as follows:
 <img src="https://github.com/Ayyanaruto/Ayyanaruto/blob/a8ab3ec2f7b0db200c750cd1f22c303d6a1c2a08/LINE.gif"><br><br>
 ## Contributors
 
-This project was made possible by the following contributors:
+This project was made possible by the following contributor:
 
 
 | Name             | GitHub Profile                              |
 | ---------------- | ------------------------------------------- |
-|<img src="https://avatars.githubusercontent.com/u/72731349?v=4" width="100" height="100"> | [github.com/johndoe](https://github.com/johndoe) |
+|<img src="https://avatars.githubusercontent.com/u/72731349?v=4" width="100" height="100"> | [github.com/Ayyannaruto](https://github.com/Ayyanaruto) |
 
