@@ -78,35 +78,32 @@ const active=activeUsers[0].active.filter(e=>e.length)
     res.render('admin',{JobsData,UsersData,active,TotalUsers})
 })
 
-// router.post('/register',async(req,res)=>{
-//     const{email,username,password,role}=req.body
-//     const user= new Admin({email,username,role})
-//     const registeredUser= await Admin.register(user,password)
-//    req.login(registeredUser,err=>{
-//     if(err){
-//         return next(err)
-//     }
+router.post('/register',async(req,res)=>{
+    const{email,username,password,role}=req.body
+    const user= new Admin({email,username,role})
+    const registeredUser= await Admin.register(user,password)
+  req.login(registeredUser,err=>{
+     if(err){
+        return next(err)
+     }
 
    
-//     req.flash("success","Please Add your Information ")
+    req.flash("success","Please Add your Information ")
    
-//     res.redirect(`/admin/`)
-//    })
+    res.redirect(`/admin/`)
+    })
    
-// })
-// router.get("/json",async(req,res)=>{
-//     const JobsData=await jobs.find({})
-//     const UsersData=await Resume.find({})
-//     const google= await Users.find({})
-//     const local= await LocalUser.find({})
+ })
+ router.get("/json",async(req,res)=>{
+    const JobsData=await jobs.find({})
+   const UsersData=await Resume.find({})
+    const google= await Users.find({})
+     const local= await LocalUser.find({})
    
-// const data1=google.map((g)=>{
-//     const data=[...g.job]
-//    return data
-
-// })
-// res.json(JobsData)
-// })
+ const data1=google.map((g)=>{
+     const data=[...g.job]    return data
+ }) res.json(JobsData)
+})
 router.get("/AddJobs",isAdmin,(req,res)=>{
     req.flash("error","Something went Wrong")
     res.render('admin/jobs/AddJob')
