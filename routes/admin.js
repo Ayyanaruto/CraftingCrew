@@ -93,7 +93,7 @@ const active=activeUsers[0].active.filter(e=>e.length)
 //     res.redirect(`/admin/`)
 //     })
    
- })
+ // })
 //  router.get("/json",async(req,res)=>{
 //     const JobsData=await jobs.find({})
 //    const UsersData=await Resume.find({})
