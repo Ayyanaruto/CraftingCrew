@@ -78,20 +78,20 @@ const active=activeUsers[0].active.filter(e=>e.length)
     res.render('admin',{JobsData,UsersData,active,TotalUsers})
 })
 
-router.post('/register',async(req,res)=>{
-    const{email,username,password,role}=req.body
-    const user= new Admin({email,username,role})
-    const registeredUser= await Admin.register(user,password)
-  req.login(registeredUser,err=>{
-     if(err){
-        return next(err)
-     }
+// router.post('/register',async(req,res)=>{
+//     const{email,username,password,role}=req.body
+//     const user= new Admin({email,username,role})
+//     const registeredUser= await Admin.register(user,password)
+//   req.login(registeredUser,err=>{
+//      if(err){
+//         return next(err)
+//      }
 
    
-    req.flash("success","Please Add your Information ")
+//     req.flash("success","Please Add your Information ")
    
-    res.redirect(`/admin/`)
-    })
+//     res.redirect(`/admin/`)
+//     })
    
  })
 //  router.get("/json",async(req,res)=>{
