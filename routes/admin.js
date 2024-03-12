@@ -94,16 +94,16 @@ router.post('/register',async(req,res)=>{
     })
    
  })
- router.get("/json",async(req,res)=>{
-    const JobsData=await jobs.find({})
-   const UsersData=await Resume.find({})
-    const google= await Users.find({})
-     const local= await LocalUser.find({})
+//  router.get("/json",async(req,res)=>{
+//     const JobsData=await jobs.find({})
+//    const UsersData=await Resume.find({})
+//     const google= await Users.find({})
+//      const local= await LocalUser.find({})
    
- const data1=google.map((g)=>{
-     const data=[...g.job]    return data
- }) res.json(JobsData)
-})
+//  const data1=google.map((g)=>{
+//      const data=[...g.job]    return data
+//  }) res.json(JobsData)
+// })
 router.get("/AddJobs",isAdmin,(req,res)=>{
     req.flash("error","Something went Wrong")
     res.render('admin/jobs/AddJob')
